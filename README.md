@@ -6,7 +6,7 @@
 
 #### Support
 
-Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
+Find the App Useful? [You can always him a coffee](https://www.buymeacoffee.com/johnsmilga)
 
 #### Docs
 
