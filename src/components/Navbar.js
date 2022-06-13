@@ -3,6 +3,7 @@ import { CartIcon } from "../icons";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  // accessing the state we want through the store
   const { amount } = useSelector((store) => store.cart);
 
   return (
