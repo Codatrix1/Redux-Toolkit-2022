@@ -8,14 +8,17 @@ const CartItem = ({ id, img, title, price, amount }) => {
       <div>
         <h4>{title}</h4>
         <h4 className="item-price">${price}</h4>
+        {/* remove button */}
         <button className="remove-btn">remove</button>
       </div>
-
+      {/* increase amount */}
       <div>
         <button className="amount-btn">
           <ChevronUp />
         </button>
+        {/* amount */}
         <p className="amount">{amount}</p>
+        {/* decrease amount */}
         <button className="amount-btn">
           <ChevronDown />
         </button>
