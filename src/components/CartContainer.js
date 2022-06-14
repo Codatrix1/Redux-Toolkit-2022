@@ -1,10 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+// import actions for dispatch
 import { clearCart } from "../features/cart/cartSlice";
 
 // import components
 import CartItem from "./CartItem";
 
+//----------------
+// React Component
+//----------------
 const CartContainer = () => {
   // useDispatch
   const dispatch = useDispatch();
@@ -48,4 +53,7 @@ const CartContainer = () => {
   );
 };
 
+//----------------
+// Default Export
+//----------------
 export default CartContainer;
