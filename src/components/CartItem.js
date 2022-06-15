@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch } from "react-redux";
 
 // import actions for dispatch
-import { removeItem } from "../features/cart/cartSlice";
+import { removeItem, increase, decrease } from "../features/cart/cartSlice";
 
 //----------------
 // React Component
@@ -25,13 +25,22 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
       {/* increase amount */}
       <div>
-        <button className="amount-btn">
+        <button className="amount-btn" onClick={() => dispatch(increase(id))}>
           <ChevronUp />
         </button>
         {/* amount */}
         <p className="amount">{amount}</p>
         {/* decrease amount */}
-        <button className="amount-btn">
+        <button
+          className="amount-btn"
+          onClick={() => {
+            if (amount === 1) {
+              dispatch(removeItem(id));
+              return;
+            }
+            dispatch(decrease({ id }));
+          }}
+        >
           <ChevronDown />
         </button>
       </div>
