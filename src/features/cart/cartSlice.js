@@ -3,7 +3,7 @@ import cartItems from "../../cartItems";
 
 const initialState = {
   cartItems: cartItems,
-  amount: 2,
+  amount: 0,
   total: 0,
   isLoading: true,
 };
@@ -33,6 +33,19 @@ const cartSlice = createSlice({
       const cartItems = state.cartItems.find((item) => item.id === payload.id);
       cartItems.amount = cartItems.amount - 1;
     },
+
+    calculateTotals: (state) => {
+      let amount = 0;
+      let total = 0;
+
+      state.cartItems.forEach((item) => {
+        amount += item.amount;
+        total += item.amount * item.price;
+      });
+
+      state.amount = amount;
+      state.total = total;
+    },
   },
 });
 
@@ -41,7 +54,8 @@ const cartSlice = createSlice({
 //------------------
 // Action creators
 //-------------------
-export const { clearCart, removeItem, increase, decrease } = cartSlice.actions;
+export const { clearCart, removeItem, increase, decrease, calculateTotals } =
+  cartSlice.actions;
 
 //----------------
 // Default Export
